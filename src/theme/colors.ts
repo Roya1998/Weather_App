@@ -1,11 +1,11 @@
 export const colors = {
-  light: {
+  dark: {
     primary: '#000000',
     secondary: '#3C3C4399',
     tertiary: '#3C3C434D',
-    quaternary: '##3C3C432E',
+    quaternary: '#3C3C432E',
   },
-  dark: {
+  light: {
     primary: '#ffffff',
     secondary: '#EBEBF599',
     tertiary: '#EBEBF54D',
@@ -41,5 +41,8 @@ export const colors = {
   },
   linearAngular: {
     primary: '#7758D1',
+  },
+  simplePurple: {
+    purple: '#402B62',
   },
 };

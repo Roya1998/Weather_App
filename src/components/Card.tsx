@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
   },
   maxMinTemp: {
     ...regularFontStyles.size16,
-    color: colors.dark.secondary,
+    color: colors.light.secondary,
   },
   city: {
     ...regularFontStyles.size18,

@@ -1,14 +1,14 @@
 import {StyleSheet} from 'react-native';
 
 export const fonts = {
-  RobotoReg: 'Roboto-Regular',
-  RobotoBold: 'Roboto-Bold',
+  Bold: 'Roboto-Bold',
+  Reg: 'Roboto-Regular',
 };
 
 export const regularFontStyles = StyleSheet.create({
-  size13: {
-    fontSize: 13,
-    fontFamily: 'Roboto-Regular',
+  size15: {
+    fontSize: 15,
+    fontFamily: 'RobotoRegular',
     color: '#fff',
   },
   size16: {
@@ -51,13 +51,18 @@ export const regularFontStyles = StyleSheet.create({
     fontFamily: 'Roboto-Regular',
     color: '#fff',
   },
-  size42: {
-    fontSize: 42,
-    fontFamily: 'Roboto-Regular',
+  size41: {
+    fontSize: 41,
+    fontFamily: 'RobotoBold',
     color: '#fff',
   },
   size64: {
     fontSize: 64,
+    fontFamily: 'Roboto-Regular',
+    color: '#fff',
+  },
+  size96: {
+    fontSize: 96,
     fontFamily: 'Roboto-Regular',
     color: '#fff',
   },
@@ -109,8 +114,8 @@ export const boldFontStyles = StyleSheet.create({
     fontFamily: 'Roboto-Bold',
     color: '#fff',
   },
-  size42: {
-    fontSize: 42,
+  size41: {
+    fontSize: 41,
     fontFamily: 'Roboto-Bold',
     color: '#fff',
   },

@@ -12,8 +12,7 @@ import {colors} from '../../../src/theme/colors';
 import LinearGradient from 'react-native-linear-gradient';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {Card} from '../../../src/components/Card';
-import {weatherData} from '../../../src/utils/Dummydata/weatherData';
-import {BlurView} from '@react-native-community/blur';
+import {weatherData} from '../../utils/Dummy Data/weatherData';
 
 export const WeatherScreen = ({navigation}) => {
   return (

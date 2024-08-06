@@ -9,6 +9,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import RightAccess from '../assets/vectors/rightAccess.svg';
 import {BlurView} from '@react-native-community/blur';
 import DropShadow from 'react-native-drop-shadow';
+import {regularFontStyles} from '../theme/typography';
 
 export const NavBar = ({navigation}) => {
   return (
@@ -31,7 +32,7 @@ export const NavBar = ({navigation}) => {
             <TextInput
               style={styles.input}
               placeholder="Search for a city or airport"
-              placeholderTextColor={colors.dark.secondary}></TextInput>
+              placeholderTextColor={colors.light.secondary}></TextInput>
           </View>
         </View>
       </SafeAreaView>
@@ -56,7 +57,7 @@ const styles = StyleSheet.create({
   searchSvg: {
     position: 'absolute',
     left: 10,
-    color: colors.dark.secondary,
+    color: colors.light.secondary,
   },
   inputContainer: {
     marginHorizontal: 20,
@@ -77,12 +78,11 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   text: {
-    fontSize: 28,
+    ...regularFontStyles.size28,
     marginLeft: 10,
-    color: '#fff',
   },
   leftArrow: {
-    color: colors.dark.secondary,
+    color: colors.light.secondary,
   },
   leftSideNavigator: {
     display: 'flex',
