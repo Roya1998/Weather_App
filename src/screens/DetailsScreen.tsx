@@ -8,6 +8,14 @@ import {regularFontStyles, boldFontStyles} from '../../src/theme/typography';
 import {Pressable} from 'react-native';
 import {AirQuality} from '../components/AirQuality';
 import {MontrealHourly} from '../utils/Dummy Data/MontrealHourlyData';
+import {UVIndex} from '../components/UVIndex';
+import {Sunrise} from '../components/Sunrise';
+import {Wind} from '../components/Wind';
+import {Rainfall} from '../components/Rainfall';
+import {Feelslike} from '../components/Feelslike';
+import {Humidity} from '../components/Humidity';
+import {Visibility} from '../components/Visibility';
+import {Pressure} from '../components/Pressure';
 
 export const DetailsScreen = ({navigation}) => {
   return (
@@ -26,7 +34,7 @@ export const DetailsScreen = ({navigation}) => {
           </View>
         </View>
       </SafeAreaView>
-      <ScrollView>
+      <ScrollView style={styles.scrollView}>
         <View style={styles.cardBackground}>
           <View style={styles.lineView}>
             <Pressable>
@@ -48,7 +56,25 @@ export const DetailsScreen = ({navigation}) => {
             })}
           </ScrollView>
         </View>
-        <AirQuality />
+        <View style={styles.detailsView}>
+          <AirQuality />
+          <View style={styles.paralelCards}>
+            <UVIndex />
+            <Sunrise />
+          </View>
+          <View style={styles.paralelCards}>
+            <Wind />
+            <Rainfall />
+          </View>
+          <View style={styles.paralelCards}>
+            <Feelslike />
+            <Humidity />
+          </View>
+          <View style={styles.paralelCards}>
+            <Visibility />
+            <Pressure />
+          </View>
+        </View>
       </ScrollView>
     </View>
   );
@@ -63,9 +89,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.simplePurple.purple,
     borderRadius: 44,
-    borderWidth: 1,
-    borderColor: colors.linearPurple.primary,
-    padding: 10,
     marginBottom: 10,
   },
 
@@ -84,6 +107,9 @@ const styles = StyleSheet.create({
   safeAreaView: {
     backgroundColor: colors.simplePurple.purple,
     height: 180,
+  },
+  scrollView: {
+    paddingHorizontal: 20,
   },
   leftArrow: {
     color: colors.light.secondary,
@@ -116,5 +142,15 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderTopColor: colors.light.tertiary,
     paddingTop: 20,
+  },
+  detailsView: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 15,
+  },
+  paralelCards: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
 });

@@ -6,6 +6,11 @@ export const fonts = {
 };
 
 export const regularFontStyles = StyleSheet.create({
+  size13: {
+    fontSize: 13,
+    fontFamily: 'RobotoRegular',
+    color: '#fff',
+  },
   size15: {
     fontSize: 15,
     fontFamily: 'RobotoRegular',
@@ -74,6 +79,11 @@ export const boldFontStyles = StyleSheet.create({
     fontFamily: 'Roboto-Bold',
     color: '#fff',
   },
+  size15: {
+    fontSize: 15,
+    fontFamily: 'Roboto-Bold',
+    color: '#fff',
+  },
   size16: {
     fontSize: 16,
     fontFamily: 'Roboto-Bold',
@@ -116,6 +126,16 @@ export const boldFontStyles = StyleSheet.create({
   },
   size41: {
     fontSize: 41,
+    fontFamily: 'Roboto-Bold',
+    color: '#fff',
+  },
+  size64: {
+    fontSize: 64,
+    fontFamily: 'Roboto-Bold',
+    color: '#fff',
+  },
+  size96: {
+    fontSize: 96,
     fontFamily: 'Roboto-Bold',
     color: '#fff',
   },

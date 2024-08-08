@@ -46,9 +46,6 @@ const styles = StyleSheet.create({
     ...boldFontStyles.size16,
     color: colors.light.secondary,
   },
-  linkText: {
-    color: colors.light.primary,
-  },
   iconView: {
     display: 'flex',
     flexDirection: 'row',
