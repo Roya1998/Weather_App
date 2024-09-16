@@ -7,6 +7,7 @@ import {
   Pressable,
   ScrollView,
 } from 'react-native';
+import {useState, useEffect} from 'react';
 import React from 'react';
 import Map from '../../assets/vectors/map.svg';
 import List from '../../assets/vectors/list.svg';
@@ -18,6 +19,30 @@ import {colors} from '../../theme/colors';
 import {BlurView} from '@react-native-community/blur';
 
 export const MainScreen = ({navigation}) => {
+  const [weatherData, setWeatherData] = useState(null);
+
+  const fetchWeatherData = () => {
+    fetch(
+      'http://api.weatherapi.com/v1/current.json?key=86bca295f2d949a8b35185331240609&q=Baku&aqi=no',
+    )
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Http error!': ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+        setWeatherData(data);
+      })
+      .catch(error => {
+        console.log('Data is not found', error);
+      });
+  };
+
+  useEffect(() => {
+    fetchWeatherData();
+  }, []);
   return (
     <ImageBackground
       resizeMode="cover"
@@ -28,19 +53,23 @@ export const MainScreen = ({navigation}) => {
         source={require('../../assets/images/house.png')}
         style={styles.houseImage}></ImageBackground>
       <SafeAreaView style={styles.safeAreaView}>
-        <View style={styles.textView}>
-          <Text style={styles.cityName}>Montreal</Text>
-          <Text style={styles.temperature}>19˚</Text>
-          <Text style={styles.condition}>Mostly Clear</Text>
-          <Text style={styles.highLow}>H:24˚ L:18˚</Text>
-        </View>
+        {weatherData ? (
+          <View style={styles.textView}>
+            <Text style={styles.cityName}>{weatherData.location.name}</Text>
+            <Text style={styles.temperature}>
+              {weatherData.current.temp_c}˚
+            </Text>
+            <Text style={styles.condition}>
+              {weatherData.current.condition.text}
+            </Text>
+          </View>
+        ) : (
+          <Text> Loading weather data</Text>
+        )}
         <BlurView blurType="dark" style={styles.blurView}>
           <View style={styles.lineView}>
             <Pressable>
               <Text style={styles.text}>Hourly Forecast</Text>
-            </Pressable>
-            <Pressable>
-              <Text style={styles.text}>Weekly Forecast</Text>
             </Pressable>
           </View>
           <ScrollView
@@ -108,7 +137,7 @@ const styles = StyleSheet.create({
     ...regularFontStyles.size41,
   },
   temperature: {...regularFontStyles.size96},
-  condition: {...boldFontStyles.size24, color: 'gray'},
+  condition: {...boldFontStyles.size24, color: colors.light.secondary},
   highLow: {
     ...boldFontStyles.size24,
   },
@@ -147,7 +176,7 @@ const styles = StyleSheet.create({
   },
 
   blurView: {
-    top: 200,
+    top: 230,
     borderRadius: 44,
     borderWidth: 1,
     borderColor: colors.light.tertiary,

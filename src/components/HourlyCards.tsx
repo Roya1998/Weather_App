@@ -10,7 +10,7 @@ import SmallSunnyRain from '../../src/assets/vectors/smallSunnyRainy.svg';
 import SmallTornado from '../../src/assets/vectors/smallTornado.svg';
 import SmallRainy from '../../src/assets/vectors/smallRainy.svg';
 import {colors} from '../../src/theme/colors';
-
+import {faker} from '@faker-js/faker';
 const smallWeatherImages = {
   windy: SmallWindy,
   showers: SmallShowers,

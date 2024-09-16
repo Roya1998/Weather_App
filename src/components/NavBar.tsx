@@ -27,13 +27,16 @@ export const NavBar = ({navigation}) => {
               <RightAccess></RightAccess>
             </Pressable>
           </View>
-          <View style={styles.inputContainer}>
-            <SearchSvg style={styles.searchSvg} />
+          {
+            // TO DO : fix search logic
+            /* <View style={styles.inputContainer}>s */
+          }
+          {/* <SearchSvg style={styles.searchSvg} />
             <TextInput
-              style={styles.input}
-              placeholder="Search for a city or airport"
-              placeholderTextColor={colors.light.secondary}></TextInput>
-          </View>
+              style={styles.input}                           
+              placeholder="Search for a city"
+              placeholderTextColor={colors.light.secondary}></TextInput> */}
+          {/* </View> */}
         </View>
       </SafeAreaView>
     </BlurView>
@@ -43,7 +46,7 @@ export const NavBar = ({navigation}) => {
 const styles = StyleSheet.create({
   mainView: {
     flex: 1,
-    height: 155,
+    // height: 155,
   },
   navBar: {
     marginTop: 10,
